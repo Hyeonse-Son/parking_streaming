@@ -4,53 +4,140 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="static/keti-logo.png">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
     <title>KETI Parking Area</title>
+
+    <script>
+    function parking_area7(){
+        document.getElementById('videostream')
+        .src="{{ url_for('parking_area7') }}";
+        document.getElementById('parkingArea')
+        .innerHTML="Parking Area - 7";
+        document.getElementById('guide')
+        .innerHTML="";
+}
+    function parking_area4(){
+        document.getElementById('videostream')
+        .src="{{ url_for('parking_area4') }}";
+        document.getElementById('parkingArea')
+        .innerHTML="Parking Area - 4";
+        document.getElementById('guide')
+        .innerHTML="첫번째 화면으로 돌아가려면 왼쪽 상단 아이콘을 클릭하세요.";
+    }
+    function parking_area3(){
+        document.getElementById('videostream')
+        .src="{{ url_for('parking_area3') }}";
+        document.getElementById('parkingArea')
+        .innerHTML="Parking Area - 3";
+        document.getElementById('guide')
+        .innerHTML="첫번째 화면으로 돌아가려면 왼쪽 상단 아이콘을 클릭하세요.";
+    }
+    function parking_area2(){
+        document.getElementById('videostream')
+        .src="{{ url_for('parking_area2') }}";
+        document.getElementById('parkingArea')
+        .innerHTML="Parking Area - 2";
+        document.getElementById('guide')
+        .innerHTML="첫번째 화면으로 돌아가려면 왼쪽 상단 아이콘을 클릭하세요.";
+    }
+    function parking_area5_1(){
+        document.getElementById('videostream')
+        .src="{{ url_for('parking_area5_1') }}";
+        document.getElementById('parkingArea')
+        .innerHTML="Parking Area - 5-1";
+        document.getElementById('guide')
+        .innerHTML="첫번째 화면으로 돌아가려면 왼쪽 상단 아이콘을 클릭하세요.";
+    }
+    function parking_area5_2(){
+        document.getElementById('videostream')
+        .src="{{ url_for('parking_area5_2') }}";
+        document.getElementById('parkingArea')
+        .innerHTML="Parking Area - 5-2";
+        document.getElementById('guide')
+        .innerHTML="첫번째 화면으로 돌아가려면 왼쪽 상단 아이콘을 클릭하세요.";
+    }
+    function parking_area6(){
+        document.getElementById('videostream')
+        .src="{{ url_for('parking_area6') }}";
+        document.getElementById('parkingArea')
+        .innerHTML="Parking Area - 6";
+        document.getElementById('guide')
+        .innerHTML="첫번째 화면으로 돌아가려면 왼쪽 상단 아이콘을 클릭하세요.";
+    }
+    function parking_area_visitor(){
+        document.getElementById('videostream')
+        .src="{{ url_for('parking_area_visitor') }}";
+        document.getElementById('parkingArea')
+        .innerHTML="Parking Area - Visitor";
+        document.getElementById('guide')
+        .innerHTML="첫번째 화면으로 돌아가려면 왼쪽 상단 아이콘을 클릭하세요.";
+    }
+    function parking_area8(){
+        document.getElementById('videostream')
+        .src="{{ url_for('parking_area8') }}";
+        document.getElementById('parkingArea')
+        .innerHTML="Parking Area - 8";
+        document.getElementById('guide')
+        .innerHTML="첫번째 화면으로 돌아가려면 왼쪽 상단 아이콘을 클릭하세요.";
+    }
+    function parking_area_tennis(){
+        document.getElementById('videostream')
+        .src="{{ url_for('parking_area_tennis') }}";
+        document.getElementById('parkingArea')
+        .innerHTML="Parking Area - Tennis";
+        document.getElementById('guide')
+        .innerHTML="첫번째 화면으로 돌아가려면 왼쪽 상단 아이콘을 클릭하세요.";
+    }
+</script>
 </head>
 <body>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <!-- Brand/logo -->
+    <a class="navbar-brand" onclick=parking_area7();>
+        <img src="static/keti-logo.png" alt="logo" style="height:30px;">
+    </a>
+
+    <!-- Links -->
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" onclick=parking_area4();>원형교차로</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" onclick=parking_area3();>본관 옆</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" onclick=parking_area2();>본관 뒤</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" onclick=parking_area5_1();>창업동 뒤 1</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" onclick=parking_area5_2();>창업동 뒤 2</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" onclick=parking_area6();>창업동 옆</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" onclick=parking_area8();>방문자 옆 주차장</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" onclick=parking_area_visitor();>방문자 주차장</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" onclick=parking_area_tennis();>테니스장</a>
+        </li>
+    </ul>
+</nav>
 <div class="container-fluid">
-    <div class="row">
-        <div class="col-lg-4">
-            <h3 class="mt-5">Parking Area - 2</h3>
-            <img width="100%" onclick="window.open(this.src)" alt="클릭하시면 조금더 커집니다.." hspace="0" src="{{ url_for('parking_area2') }}">
-        </div>
-        <div class="col-lg-4">
-            <h3 class="mt-5">Parking Area - 3</h3>
-            <img width="100%" onclick="window.open(this.src)" alt="클릭하시면 조금더 커집니다.." hspace="0" src="{{ url_for('parking_area3') }}">
-        </div>
-        <div class="col-lg-4">
-            <h3 class="mt-5">Parking Area - 4</h3>
-            <img width="100%" onclick="window.open(this.src)" alt="클릭하시면 조금더 커집니다.." hspace="0" src="{{ url_for('parking_area4') }}">
-        </div>
-        <div class="col-lg-4">
-            <h3 class="mt-5">Parking Area - 5-1</h3>
-            <img width="100%" onclick="window.open(this.src)" alt="클릭하시면 조금더 커집니다.." hspace="0" src="{{ url_for('parking_area5_1') }}">
-        </div>
-        <div class="col-lg-4">
-            <h3 class="mt-5">Parking Area - 5-2</h3>
-            <img width="100%" onclick="window.open(this.src)" alt="클릭하시면 조금더 커집니다.." hspace="0" src="{{ url_for('parking_area5_2') }}">
-        </div>
-        <div class="col-lg-4">
-            <h3 class="mt-5">Parking Area - 6</h3>
-            <img width="100%" onclick="window.open(this.src)" alt="클릭하시면 조금더 커집니다.." hspace="0" src="{{ url_for('parking_area6') }}">
-        </div>
-        <div class="col-lg-4">
-            <h3 class="mt-5">Parking Area - 7</h3>
-            <img width="100%" onclick="window.open(this.src)" alt="클릭하시면 조금더 커집니다.." hspace="0" src="{{ url_for('parking_area7') }}">
-        </div>
-        <div class="col-lg-4">
-            <h3 class="mt-5">Parking Area - 8</h3>
-            <img width="100%" onclick="window.open(this.src)" alt="클릭하시면 조금더 커집니다.." hspace="0" src="{{ url_for('parking_area8') }}">
-        </div>
-        <div class="col-lg-4">
-            <h3 class="mt-5">Parking Area - Vistor</h3>
-            <img width="100%" onclick="window.open(this.src)" alt="클릭하시면 조금더 커집니다.." hspace="0" src="{{ url_for('parking_area_vistor') }}">
-        </div>
-    </div>
+    <h3 id="parkingArea" class="mt-5">Parking Area - 7</h3>
+    <img id="videostream" width="100%" onclick="window.open(this.src)" hspace="0"
+         src="{{ url_for('parking_area7') }}">
 </div>
+<div id="guide"></div>
 </body>
 </html>

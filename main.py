@@ -144,6 +144,21 @@ def area_visitor_frames():  # generate frame by frame from camera
                    b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')  # concat frame one by one and show result
 
 
+def area_tennis_frames():  # generate frame by frame from camera
+    camera= cv2.VideoCapture('rtsp://admin:1234556@10.252.29.21/stream0')  # use IP camera
+
+    while True:
+        # Capture frame-by-frame
+        success, frame = camera.read()  # read the camera frame
+        if not success:
+            break
+        else:
+            ret, buffer = cv2.imencode('.jpg', frame)
+            frame = buffer.tobytes()
+            yield (b'--frame\r\n'
+                   b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')  # concat frame one by one and show result
+
+
 @app.route('/parking_area2')
 def parking_area2():
     return Response(area2_frames(), mimetype='multipart/x-mixed-replace; boundary=frame')
@@ -183,9 +198,15 @@ def parking_area7():
 def parking_area8():
     return Response(area8_frames(), mimetype='multipart/x-mixed-replace; boundary=frame')
 
-@app.route('/parking_area_vistor')
-def parking_area_vistor():
+
+@app.route('/parking_area_visitor')
+def parking_area_visitor():
     return Response(area_visitor_frames(), mimetype='multipart/x-mixed-replace; boundary=frame')
+
+
+@app.route('/parking_area_tennis')
+def parking_area_tennis():
+    return Response(area_tennis_frames(), mimetype='multipart/x-mixed-replace; boundary=frame')
 
 
 @app.route('/')
@@ -196,3 +217,4 @@ def index():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True, port=3000)
+    # app.run(debug=True, port=3000)
